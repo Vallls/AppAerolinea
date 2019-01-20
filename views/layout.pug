@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    // preload
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/stylesheets/style.css", type='text/css')
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Aerolineas Guacamaya
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous")
+
+  body
+    block header
+      .header
+        .row.r1
+          .r3
+            img(src="../images/logo.png",width="290px", height="70px")
+        nav.navbar.navbar-expand-lg.navbar-c
+          .collapse.navbar-collapse(id="navbarNavAltMarkup")
+            .navbar-nav 
+              a.nav-item.nav-link.nav-cen(href='/') Home
+              a.nav-item.nav-link.nav-cen(href='#') Pasajes
+              a.nav-item.nav-link.nav-cen(href='#') Vuelos
+              a.nav-item.nav-link.nav-cen(href='/aviones') Aviones
+              a.nav-item.nav-link.nav-cen(href='#') Tripulacion
+              a.nav-item.nav-link.nav-cen(href='#') Reportes
+  
+    block content
+
+    block footer
+      .footer
+        .container-fluid.conbg
+          .col-4.coldee
+            h6 Lorem ipsum dolor sit amet.
+          .col-4.coldee
+            h6 Copyright © 2019 Aerolineas Guacamaya. All rights reserved.
+          .col-4.colde
+            img(src="../images/twitter.png",width="40px", height="40px")
+            img(src="../images/instagram.png",width="50px", height="50px")
+            img(src="../images/fb.png",width="40px", height="40px")
+            h6 Siguenos: @aerolineasguacamaya
+        
+    
+    block scripts
+      script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js", defer)
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js", defer)
+      script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js", defer)
+  
+
+
