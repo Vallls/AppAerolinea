@@ -12,29 +12,29 @@ html(lang="en")
   body
     block header
       .header
-        .row.r1
-          .r3
+        .row.header-banner
+          .header-banner__img
             img(src="../images/logo.png",width="290px", height="70px")
-        nav.navbar.navbar-expand-lg.navbar-c
+        nav.navbar.navbar-expand-lg.main-navbar
           .collapse.navbar-collapse(id="navbarNavAltMarkup")
             .navbar-nav 
-              a.nav-item.nav-link.nav-cen(href='/') Home
-              a.nav-item.nav-link.nav-cen(href='#') Pasajes
-              a.nav-item.nav-link.nav-cen(href='#') Vuelos
-              a.nav-item.nav-link.nav-cen(href='/aviones') Aviones
-              a.nav-item.nav-link.nav-cen(href='#') Tripulacion
-              a.nav-item.nav-link.nav-cen(href='#') Reportes
+              a.nav-item.nav-link.main-navbar__link(href='/') Home
+              a.nav-item.nav-link.main-navbar__link(href='#') Pasajes
+              a.nav-item.nav-link.main-navbar__link(href='#') Vuelos
+              a.nav-item.nav-link.main-navbar__link(href='/aviones') Aviones
+              a.nav-item.nav-link.main-navbar__link(href='#') Tripulacion
+              a.nav-item.nav-link.main-navbar__link(href='#') Reportes
   
     block content
 
     block footer
       .footer
-        .container-fluid.conbg
-          .col-4.coldee
+        .container-fluid.footer-container
+          .col-4.footer-container__text
             h6 Lorem ipsum dolor sit amet.
-          .col-4.coldee
+          .col-4.footer-container__text
             h6 Copyright © 2019 Aerolineas Guacamaya. All rights reserved.
-          .col-4.colde
+          .col-4.footer-container__img
             img(src="../images/twitter.png",width="40px", height="40px")
             img(src="../images/instagram.png",width="50px", height="50px")
             img(src="../images/fb.png",width="40px", height="40px")
