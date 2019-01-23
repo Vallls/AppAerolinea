@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const sequelize = require("./config/db");
 
 var app = express();
 
@@ -35,6 +36,20 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+sequelize
+  .authenticate()
+  .then(value => value)
+  .catch(err => {
+    console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
+  });
+
+  sequelize.sync({logging: false});
+
+app.set("port", process.env.PORT || 3306);
+const server = app.listen(app.get("port"), () => {
+  console.log(`Express running → PORT ${server.address().port} 🔥`);
 });
 
 module.exports = app;

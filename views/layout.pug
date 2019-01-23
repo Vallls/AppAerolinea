@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="es")
   head
     // preload
     meta(charset="UTF-8")
@@ -14,9 +14,11 @@ html(lang="en")
       .header
         .row.header-banner
           .header-banner__img
-            img(src="../images/logo.png",width="290px", height="70px")
+            img(src="../images/logo.png",width="90%", height="70%")
         nav.navbar.navbar-expand-lg.main-navbar
-          .collapse.navbar-collapse(id="navbarNavAltMarkup")
+          button.navbar-toggler(type="button" data-toggle="collapse" data-target="#Toggler" aria-controls="Toggler" aria-expanded="false" aria-label="Toggle navigation" style="background-color:pink")
+            span.navbar-toggler-icon
+          .collapse.navbar-collapse.mr-auto.mt-2.mt-lg-0(id="Toggler")
             .navbar-nav 
               a.nav-item.nav-link.main-navbar__link(href='/') Home
               a.nav-item.nav-link.main-navbar__link(href='#') Pasajes
@@ -35,10 +37,10 @@ html(lang="en")
           .col-4.footer-container__text
             h6 Copyright © 2019 Aerolineas Guacamaya. All rights reserved.
           .col-4.footer-container__img
-            img(src="../images/twitter.png",width="40px", height="40px")
-            img(src="../images/instagram.png",width="50px", height="50px")
-            img(src="../images/fb.png",width="40px", height="40px")
-            h6 Siguenos: @aerolineasguacamaya
+            img(src="../images/twitter.png",width="40vw", height="40vh")
+            img(src="../images/instagram.png",width="50vw", height="50vh")
+            img(src="../images/fb.png",width="40vw", height="40vh")
+            h6.footer-container__imgtext Siguenos: @aerolineasguacamaya.
         
     
     block scripts

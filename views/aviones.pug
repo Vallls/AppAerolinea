@@ -14,6 +14,17 @@ block content
                     .modal-footer
                         button.btn.btn-secondary(type="button" data-dismiss="modal") Close
                         button.btn.btn-primary(type="button") Save Changes
+        .modal.fade(id="AgregarAviones" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+            .modal-dialog(role="document")
+                .modal-content
+                    .modal-header
+                        h5.modal-title(id="exampleModalLabel") Modal title
+                        button.close(type="button" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden="true") &times;
+                    .modal-body
+                    .modal-footer
+                        button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+                        button.btn.btn-primary(type="button") Save Changes
         .row
             .col-3.aviones-container
                 .col-12
@@ -24,10 +35,10 @@ block content
                     .row
                         .col-6.aviones-container__item
                             button.aviones-container__button(type="button" data-toggle="modal" data-target="#ListaModelos")
-                                h5 Boton DEMO
+                                h5 Ver Aviones
                         .col-6.aviones-container__item
-                            button.aviones-container__button(type="button" data-toggle="modal" data-target="#ListaModelos")
-                                h5 Boton DEMO
+                            button.aviones-container__button(type="button" data-toggle="modal" data-target="#AgregarAviones")
+                                h5 Agregar Aviones
             .col-3.aviones-container
                 .col-12
                     .row.body-container__tittle
