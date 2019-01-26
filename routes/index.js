@@ -10,5 +10,9 @@ router.get('/aviones', function(req, res, next) {
   res.render('aviones');
 });
 
+router.get('/vuelos', function(req, res, next) {
+  res.render('vuelos');
+});
+
 
 module.exports = router;

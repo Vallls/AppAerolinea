@@ -1,0 +1,72 @@
+extends layout
+
+block content
+
+    .body
+        .modal.fade(id="Ver" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+            .modal-dialog.modal-lg(role="document")
+                .modal-content
+                    .modal-header
+                        h5.modal-title(id="exampleModalLabel") Lista Origen/Destino
+                        button.close(type="button" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden="true") &times;
+                    .modal-body
+                        .col-12
+                            table.table.bg-white
+                                thead
+                                    tr 
+                                        th(scope='col') ID Vuelo
+                                        th(scope='col') Origen
+                                        th(scope='col') Destino
+                                        th(scope='col') Precio
+                                        th(scope='col') # Equipaje Economico
+                                        th(scope='col') # Equipaje PC
+                                        th(scope='col') Peso Max Equipaje
+                                        th(scope='col') Duracion
+                                tbody
+                                -   for (var i = 0; i < origendestino.length; i++)
+                                    tr
+                                        th(scope="row") #{origendestino[i].IDVuelo}
+                                        td #{origendestino[i].Origen}
+                                        td #{origendestino[i].Destino}
+                                        td #{origendestino[i].Precio}
+                                        td #{origendestino[i].EC}
+                                        td #{origendestino[i].EPC}
+                                        td #{origendestino[i].PME}
+                                        td #{origendestino[i].Duracion}
+                    .modal-footer
+                        button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+                        button.btn.btn-primary(type="button") Save Changes
+        .modal.fade(id="Agregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+            .modal-dialog(role="document")
+                .modal-content
+                    .modal-header
+                        h5.modal-title(id="exampleModalLabel") Agregar Origen/Destino
+                        button.close(type="button" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden="true") &times;
+                    .modal-body
+                    .modal-footer
+                        button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+                        button.btn.btn-primary(type="button") Save Changes
+        .row
+            .col-3.aviones-container
+                .col-12
+                    .row.body-container__tittle
+                        h1 Lista de Origenes/Destinos
+                    .row
+                        img(src="../images/modelos.jpg", width="100%", height="100%", style="border-radius: 20px")
+                    .row
+                        .col-6.aviones-container__item
+                            button.aviones-container__button(type="button" data-toggle="modal" data-target="#Ver")
+                                h5 Ver 
+                        .col-6.aviones-container__item
+                            button.aviones-container__button(type="button" data-toggle="modal" data-target="#Agregar")
+                                h5 Agregar 
+            .col-3.aviones-container
+                .col-12
+                    .row.body-container__tittle
+                         
+            .col-3.aviones-container
+                .col-12
+                    .row.body-container__tittle
+                        
