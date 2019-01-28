@@ -1,7 +1,7 @@
 const sequelize = require('sequelize');
 const db = require('../config/db');
 
-//Modelo de Origen-Destino  
+module.exports = (sequelize, Sequelize) => {
 const OrigenDestino = db.define('OrigenDestino', {
     IDVuelo: {
         type: sequelize.STRING,
@@ -79,5 +79,5 @@ const OrigenDestino = db.define('OrigenDestino', {
     timestamps: false,
     freezeTableName: true
 });
-
-module.exports = OrigenDestino;
+    return OrigenDestino;
+}

@@ -1,15 +1,16 @@
-const Sequelize = require("sequelize");
-const { DB_NAME, DB_USER, DB_PASSWORD } = process.env;
+const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
-  host: "bmmzj1tdpmegym3718zw-mysql.services.clever-cloud.com",
-  dialect: "mysql",
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  }
-});
+const sequelize = new Sequelize('bdmcbseoqw7wy80lfjf2', 'ucxxsxbvcovovkbc5gr2', 'LbKyARnIWpoDhPoKSf7h', {
+  host: 'bdmcbseoqw7wy80lfjf2-mysql.services.clever-cloud.com',
+  dialect: 'mysql',
+})
 
-module.exports = sequelize;
+sequelize.authenticate()
+  .then(() => {
+    console.log('Conectado')
+  })
+  .catch(err => {
+    console.log('No se conecto')
+  })
+
+  module.exports = sequelize;

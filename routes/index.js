@@ -14,5 +14,9 @@ router.get('/vuelos', function(req, res, next) {
   res.render('vuelos');
 });
 
+const origenDestinoController = require('../controllers/ODController');
+router.get('/vuelos', (req,res) => {
+  origenDestinoController.getOrigenDestino(data => res.render('vuelos', {origendestino: data}))
+});
 
-module.exports = router;
+module.exports=router;
