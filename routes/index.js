@@ -10,13 +10,16 @@ router.get('/aviones', function(req, res, next) {
   res.render('aviones');
 });
 
-router.get('/vuelos', function(req, res, next) {
-  res.render('vuelos');
-});
-
 const origenDestinoController = require('../controllers/ODController');
 router.get('/vuelos', (req,res) => {
   origenDestinoController.getOrigenDestino(data => res.render('vuelos', {origendestino: data}))
 });
+
+router.post('/Vuelos', (req,res) => {
+  console.log(req.body);
+  origenDestinoController.createOrigenDestino(req.body)
+  res.redirect('/vuelos');
+});
+
 
 module.exports=router;

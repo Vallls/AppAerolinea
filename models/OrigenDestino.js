@@ -1,12 +1,12 @@
 const sequelize = require('sequelize');
 const db = require('../config/db');
 
-module.exports = (sequelize, Sequelize) => {
+
 const OrigenDestino = db.define('OrigenDestino', {
-    IDVuelo: {
+    id: {
         type: sequelize.STRING,
         allowNull: false,
-
+        primaryKey: true,
         validate: {
             isAlpha: true,
             notEmpty: true
@@ -67,7 +67,7 @@ const OrigenDestino = db.define('OrigenDestino', {
         }
     },
     Duracion: {
-        type: sequelize.TIME,
+        type: sequelize.STRING,
         allowNull: false,
 
         validate: {
@@ -79,5 +79,4 @@ const OrigenDestino = db.define('OrigenDestino', {
     timestamps: false,
     freezeTableName: true
 });
-    return OrigenDestino;
-}
+module.exports = OrigenDestino;

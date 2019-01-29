@@ -23,17 +23,17 @@ block content
                                         th(scope='col') # Equipaje PC
                                         th(scope='col') Peso Max Equipaje
                                         th(scope='col') Duracion
-                                    tbody
-                                    - for (var i = 0; i < origendestino.length; i++)
-                                        tr
-                                        th #{origendestino[i].IDVuelo}
-                                        th #{origendestino[i].Origen}      
-                                        th #{origendestino[i].Destino}
-                                        th #{origendestino[i].Precio}
-                                        th #{origendestino[i].EE}
-                                        th #{origendestino[i].EPC}
-                                        th #{origendestino[i].PME}
-                                        th #{origendestino[i].Duracion}
+                                tbody
+                                - for (var i = 0; i < origendestino.length; i++)
+                                  tr
+                                    th(scope='row') #{origendestino[i].id}
+                                    td #{origendestino[i].Origen}
+                                    td #{origendestino[i].Destino}
+                                    td #{origendestino[i].Precio}
+                                    td #{origendestino[i].EE}
+                                    td #{origendestino[i].EPC}
+                                    td #{origendestino[i].PME}
+                                    td #{origendestino[i].Duracion}
                     .modal-footer
                         button.btn.btn-secondary(type="button" data-dismiss="modal") Close
                         button.btn.btn-primary(type="button") Save Changes
@@ -45,35 +45,34 @@ block content
                         button.close(type="button" data-dismiss="modal" aria-label="Close")
                             span(aria-hidden="true") &times;
                     .modal-body
-                        form(method="POST" action="")
+                        form(method="POST" action="/Vuelos")
                             .form-group
                                 label(for='idvuelo') ID Vuelo
-                                input(type="text" aria-describedby='idvuelo' placeholder='IDVuelo' name='idvuelo')
+                                input(type="text" aria-describedby='idvuelo' placeholder='IDVuelo' name='id')
                             .form-group
                                 label(for='origen') Origen
-                                input(type="text" aria-describedby='origen' placeholder='Origen' name='origen')
+                                input(type="text" aria-describedby='origen' placeholder='Origen' name='Origen')
                             .form-group
                                 label(for='destino') Destino
-                                input(type="text" aria-describedby='destino' placeholder='Destino' name='destino')
+                                input(type="text" aria-describedby='destino' placeholder='Destino' name='Destino')
                             .form-group
                                 label(for='precio') Precio
-                                input(type="number" aria-describedby='precio' placeholder='Precio' name='precio')
+                                input(type="number" aria-describedby='precio' placeholder='Precio' name='Precio')
                             .form-group
                                 label(for='EC') Equipaje Economica
-                                input(type="number" aria-describedby='EC' placeholder='Equipaje Economica' name='EC')
-                            .form-group
-                                label(for='PME') Peso Maximo por Equipaje
-                                input(type="number" aria-describedby='PME' placeholder='Peso Maximo por Equipaje' name='PME')
+                                input(type="number" aria-describedby='EC' placeholder='Equipaje Economica' name='EE')
                             .form-group
                                 label(for='EPC') Equipaje Primera Clase
                                 input(type="number" aria-describedby='EPC' placeholder='Equipaje Primera Clase' name='EPC')
                             .form-group
+                                label(for='PME') Peso Maximo por Equipaje
+                                input(type="number" aria-describedby='PME' placeholder='Peso Maximo por Equipaje' name='PME')
+                            .form-group
                                 label(for='duracion') Duracion
-                                input(type="time" aria-describedby='duracion' placeholder='Duracion' name='duracion')
-                                   
+                                input(type="text" aria-describedby='duracion' placeholder='Duracion' name='Duracion')
+                            button.btn.btn-primary(type="submit") Save Changes       
                     .modal-footer
                         button.btn.btn-secondary(type="button" data-dismiss="modal") Close
-                        button.btn.btn-primary(type="button") Save Changes
         .row
             .col-3.aviones-container
                 .col-12

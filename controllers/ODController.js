@@ -18,4 +18,10 @@ controller.getOrigenDestino = async function (callback) {
     }
 };
 
+controller.createOrigenDestino = async function (data) {
+    
+        console.log(data.IDVuelo, data.Origen, data.Destino, data.Precio, data.EE, data.EPC, data.PME, data.Duracion);
+        OrigenDestino.create(data);
+};
+
 module.exports = controller;
