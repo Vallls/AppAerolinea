@@ -24,4 +24,18 @@ controller.createOrigenDestino = async function (data) {
         OrigenDestino.create(data);
 };
 
+controller.deleteOrigenDestino = async function (id, callback) {
+    try {
+        let response = await OrigenDestino.destroy(
+         {
+            where: {
+                id
+            }
+        });
+        callback(null);
+    } catch (error) {
+        callback(error);
+    }
+}
+
 module.exports = controller;

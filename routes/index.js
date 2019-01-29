@@ -21,5 +21,18 @@ router.post('/Vuelos', (req,res) => {
   res.redirect('/vuelos');
 });
 
+router.post("/vuelos/:id", (req, res) => {
+  if (!!req.params.id) {
+    origenDestinoController.deleteOrigenDestino(req.params.id, (err) => {
+      if (err)
+        res.json({
+          success: false,
+          msg: 'Failed to delete product'
+        });
+      else
+        res.redirect('/vuelos');
+    });
+  }
+});
 
 module.exports=router;
