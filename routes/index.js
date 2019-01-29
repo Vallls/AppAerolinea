@@ -35,4 +35,17 @@ router.post("/vuelos/:id", (req, res) => {
   }
 });
 
+router.post("/vueloss/:id", (req, res) => {
+  if (!!req.params.id) {
+    origenDestinoController.updateOrigenDestino({id: req.params.id, Precio: req.body.Precio}, (err) => {
+      if (err)
+        res.json({
+          success: false,
+          msg: 'Failed to update product'
+        });
+      else
+        res.redirect('/vuelos');
+    });
+  }
+});
 module.exports=router;

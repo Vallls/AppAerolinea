@@ -36,6 +36,22 @@ controller.deleteOrigenDestino = async function (id, callback) {
     } catch (error) {
         callback(error);
     }
+};
+
+controller.updateOrigenDestino = async function (data, callback) {
+    try {
+        let response = await OrigenDestino.update( {
+            Precio:data.Precio
+        },
+         {
+            where: {
+                id:data.id
+            }
+        });
+        callback(null);
+    } catch (error) {
+        callback(error);
+    }
 }
 
 module.exports = controller;

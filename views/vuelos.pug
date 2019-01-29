@@ -31,13 +31,17 @@ block content
                                     td #{origendestino[i].Origen}
                                     td #{origendestino[i].Destino}
                                     td #{origendestino[i].Precio}
+                                        form(action=`vueloss/${origendestino[i].id}`,method="POST")
+                                            label(for='Precio') Precio
+                                            input.form-control.input-sm(type="number" aria-describedby='precio' placeholder='Precio' name='Precio')
+                                            button.btn.btn-outline-danger(type='submit') Update
                                     td #{origendestino[i].EE}
                                     td #{origendestino[i].EPC}
                                     td #{origendestino[i].PME}
                                     td #{origendestino[i].Duracion}
                                     td
                                         form(action=`vuelos/${origendestino[i].id}`,method="POST")
-                                            button.btn.btn-outline-danger(type='submit') Eliminar
+                                            button.btn.btn-outline-danger(type='submit') Eliminar                  
                     .modal-footer
                         button.btn.btn-secondary(type="button" data-dismiss="modal") Close
                         button.btn.btn-primary(type="button") Save Changes
@@ -98,4 +102,7 @@ block content
             .col-3.aviones-container
                 .col-12
                     .row.body-container__tittle
-                        
+    
+        - function capturar()
+            var updateP=document.getElementByName("Precio").value
+
