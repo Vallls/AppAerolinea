@@ -12,7 +12,7 @@ block content
                             span(aria-hidden="true") &times;
                     .modal-body
                         .col-12
-                            table.table.bg-white.tableedit
+                            table.body-table
                                 thead
                                     tr 
                                         th(scope='col') ID Vuelo
@@ -28,14 +28,14 @@ block content
                                   tr
                                     th(scope='row') #{origendestino[i].id}
                                         form(action=`vuelos/${origendestino[i].id}`,method="POST")
-                                            button.btn.btn-outline-danger(type='submit') Eliminar  
+                                            button.aviones-container__button(type='submit') Eliminar  
                                     td #{origendestino[i].Origen}
                                     td #{origendestino[i].Destino}
                                     td #{origendestino[i].Precio}
                                         form(action=`vueloss/${origendestino[i].id}`,method="POST")
-                                            label(for='Precio') Precio
-                                            input.form-control.input-sm(type="number" aria-describedby='precio' placeholder='Precio' name='Precio')
-                                            button.btn.btn-outline-danger(type='submit') Update
+                                            label(for='Precio')
+                                            input.form-control.input-sm(type="number" aria-describedby='precio' placeholder='Precio' name='Precio' style="margin-bottom:2px")
+                                            button.aviones-container__button(type='submit') Update
                                     td #{origendestino[i].EE}
                                     td #{origendestino[i].EPC}
                                     td #{origendestino[i].PME}
@@ -53,39 +53,39 @@ block content
                     .modal-body
                         form(method="POST" action="/Vuelos")
                             .form-group
-                                label(for='idvuelo') ID Vuelo
-                                input(type="text" aria-describedby='idvuelo' placeholder='IDVuelo' name='id')
+                                label.model-label(for='idvuelo') ID Vuelo
+                                input.modal-input(type="text" aria-describedby='idvuelo' placeholder='IDVuelo' name='id')
                             .form-group
-                                label(for='origen') Origen
-                                input(type="text" aria-describedby='origen' placeholder='Origen' name='Origen')
+                                label.model-label(for='origen') Origen
+                                input.modal-input(type="text" aria-describedby='origen' placeholder='Origen' name='Origen')
                             .form-group
-                                label(for='destino') Destino
-                                input(type="text" aria-describedby='destino' placeholder='Destino' name='Destino')
+                                label.model-label(for='destino') Destino
+                                input.modal-input(type="text" aria-describedby='destino' placeholder='Destino' name='Destino')
                             .form-group
-                                label(for='precio') Precio
-                                input(type="number" aria-describedby='precio' placeholder='Precio' name='Precio')
+                                label.model-label(for='precio') Precio
+                                input.modal-input(type="number" aria-describedby='precio' placeholder='Precio' name='Precio')
                             .form-group
-                                label(for='EC') Equipaje Economica
-                                input(type="number" aria-describedby='EC' placeholder='Equipaje Economica' name='EE')
+                                label.model-label(for='EC') Equipaje Economica
+                                input.modal-input(type="number" aria-describedby='EC' placeholder='Equipaje Economica' name='EE')
                             .form-group
-                                label(for='EPC') Equipaje Primera Clase
-                                input(type="number" aria-describedby='EPC' placeholder='Equipaje Primera Clase' name='EPC')
+                                label.model-label(for='EPC') Equipaje Primera Clase
+                                input.modal-input(type="number" aria-describedby='EPC' placeholder='Equipaje Primera Clase' name='EPC')
                             .form-group
-                                label(for='PME') Peso Maximo por Equipaje
-                                input(type="number" aria-describedby='PME' placeholder='Peso Maximo por Equipaje' name='PME')
+                                label.model-label(for='PME') Peso Maximo por Equipaje
+                                input.modal-input(type="number" aria-describedby='PME' placeholder='Peso Maximo por Equipaje' name='PME')
                             .form-group
-                                label(for='duracion') Duracion
-                                input(type="text" aria-describedby='duracion' placeholder='Duracion' name='Duracion')
-                            button.btn.btn-primary(type="submit") Agregar       
+                                label.model-label(for='duracion') Duracion
+                                input.modal-input(type="text" aria-describedby='duracion' placeholder='Duracion' name='Duracion')
+                            button.modal-btn(type="submit") Agregar       
                     .modal-footer
-                        button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+                        button.modal-btn(type="button" data-dismiss="modal") Close
         .row
             .col-3.aviones-container
                 .col-12
                     .row.body-container__tittle
                         h1 Lista de Origenes/Destinos
                     .row
-                        img(src="../images/modelos.jpg", width="100%", height="100%", style="border-radius: 20px")
+                        img(src="../images/cartelera.jpg", width="100%", height="250px", style="border-radius: 20px")
                     .row
                         .col-6.aviones-container__item
                             button.aviones-container__button(type="button" data-toggle="modal" data-target="#Ver")

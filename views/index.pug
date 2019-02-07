@@ -2,10 +2,28 @@ extends layout
 
 block content
   .body
-    .col-5.body-container
-      .col-12
-        .row.body-container__tittle
-          h1(style="font-size:5vw") Aerolineas Guacamaya
-        .row
-          h6(style="font-size:1.5vw") Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, aliquam. Ipsum exercitationem vel aliquid magnam, alias qui quisquam laborum ad mollitia voluptatem inventore aliquam sunt possimus saepe, dignissimos eum sit voluptas quia non nam earum similique quibusdam dolor suscipit! Expedita, quibusdam laboriosam voluptatum quia nisi assumenda eveniet, ab consequuntur soluta unde dolore ipsum natus officia delectus, ex odio. Quasi nihil quas vero magni aliquid esse voluptates eum magnam laudantium vel ipsa dolore hic temporibus corporis laborum, dolores eos rerum saepe. Ut, corrupti aliquid? Iure exercitationem ipsam aperiam minima modi fugit dolor dolore velit, voluptates itaque, est consequuntur tenetur eaque eum?
-
+    .row.body-custom
+      span.body-slogan El Placer de Volar
+      .col-5.body-container
+        .col-12
+          .row.body-container__tittle
+            h1(style="font-size:5vw" ) Aerolineas Guacamaya
+          .row
+            #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+              ol.carousel-indicators
+                li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+                li(data-target='#carouselExampleIndicators' data-slide-to='1')
+                li(data-target='#carouselExampleIndicators' data-slide-to='2')
+              .carousel-inner
+                .carousel-item.active
+                  img.d-block.w-100(src='../images/1.jpg', height="300px")
+                .carousel-item
+                  img.d-block.w-100(src='../images/2.jpeg' height="300px")
+                .carousel-item
+                  img.d-block.w-100(src='../images/3.jpg' height="300px")
+              a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.sr-only Previous
+              a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.sr-only Next
