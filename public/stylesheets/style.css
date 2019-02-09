@@ -204,6 +204,8 @@
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     cursor: pointer;
     box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.4);
+    width: 90px;
+    margin-left: 10%;
 }
 
 .modal-body-tam{
