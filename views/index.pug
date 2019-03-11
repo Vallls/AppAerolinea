@@ -2,28 +2,23 @@ extends layout
 
 block content
   .body
-    .row.body-custom
-      span.body-slogan El Placer de Volar
-      .col-5.body-container
-        .col-12
-          .row.body-container__tittle
-            h1(style="font-size:5vw" ) Aerolineas Guacamaya
-          .row
-            #carouselExampleIndicators.carousel.slide(data-ride='carousel')
-              ol.carousel-indicators
-                li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
-                li(data-target='#carouselExampleIndicators' data-slide-to='1')
-                li(data-target='#carouselExampleIndicators' data-slide-to='2')
-              .carousel-inner
-                .carousel-item.active
-                  img.d-block.w-100(src='../images/1.jpg', height="300px")
-                .carousel-item
-                  img.d-block.w-100(src='../images/2.jpeg' height="300px")
-                .carousel-item
-                  img.d-block.w-100(src='../images/3.jpg' height="300px")
-              a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-                span.carousel-control-prev-icon(aria-hidden='true')
-                span.sr-only Previous
-              a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-                span.carousel-control-next-icon(aria-hidden='true')
-                span.sr-only Next
+    .content
+      span.tittle Nuestros Destinos mas visitados
+      #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+          li(data-target='#carouselExampleIndicators' data-slide-to='1')
+          li(data-target='#carouselExampleIndicators' data-slide-to='2')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100(src='../images/1.jpg', height="300px")
+          .carousel-item
+            img.d-block.w-100(src='../images/2.jpeg' height="300px")
+          .carousel-item
+            img.d-block.w-100(src='../images/3.jpg' height="300px")
+        a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next

@@ -1,271 +1,168 @@
 @font-face{
-    font-family: 'lion_king';
-    src: url('../fonts/lion_king.ttf');
-    font-weight: normal;
-    font-style: normal;
-    
+  font-family: 'Bigtime';
+  src: url('../fonts/Bigtime.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@font-face{
-    font-family: 'Assassin';
-    src: url('../fonts/Assassin$.ttf');
-    font-weight: normal;
-    font-style: normal;
-    
-}
-
-@font-face{
-    font-family: 'getshow';
-    src: url('../fonts/Get\ Show.ttf');
-    font-weight: normal;
-    font-style: normal;
-    
-}
-
-@font-face{
-    font-family: 'brochette';
-    src: url('../fonts/Brochette\ DEMO.otf');
-    font-weight: normal;
-    font-style: normal;
-    
-}
-
-@font-face{
-    font-family: 'donkey';
-    src: url('../fonts/Donkey\ Stone.otf');
-    font-weight: normal;
-    font-style: normal;
-    
-}
-
-
-/*Layout*/
-.header-banner{
-    background-image: linear-gradient(rgb(206, 45, 102), rgba(255, 157, 35, 0.53));
-    height: 70px;
-    background-size: cover;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 10px;
-}
-
-.header-banner__img img{
-    object-fit: contain;
-    height: 50px;
-    width: 100%;
-}
-
-.main-navbar{
-    background-color: #30113e;
-    justify-content: center;
-    font-family: donkey;
-    font-size: 35px;
-    padding: 0;
-    margin: 0;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-    height: 50px;
-}
-
-.navbar-custom{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-}
-
-.main-navbar__link{
-    color: white;
-    padding: 0;
-    font-size: 2.5vw;
-    text-shadow: black 0.1em 0.1em 0.2em
-}
-
-.footer{
-  height: 80px;
+.header {
+  display: flex;
   width: 100%;
-  background-color: #30113e;
-  box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.4);
+  padding: 0 10px;
+  height: 100px;
 }
 
-.footer-container{
-    height: 80px;
-    display: flex;
-    font-family: brochette;
-    color: rgb(197, 195, 195);
-}
-
-.footer-container__img{
-    text-align: center;
-    text-shadow: black 0.1em 0.1em 0.2em
-}
-
-.footer-container__imgtext{
-    text-align: center;
-    font-size: 1.2vw;
-    text-shadow: black 0.1em 0.1em 0.2em
-}
-
-.footer-container__text{
-    padding: 0 10px;
-    font-size: 8vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: black 0.1em 0.1em 0.2em
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('../images/aviones-4k.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 
-/*Index*/
+.header-logo{
+  flex: 1 1 300px;
+  padding: 20px;
+}
+
+.header-logo img{
+  max-width: 300px;
+}
+
+.header-navbar{
+  font-family: Bigtime;
+  color: white;
+  flex: 1;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin: 0 10% 0;
+  padding: 0;
+}
+
+ul.header-navbar li.header-navbar_list {
+  list-style: none;
+  margin: 0 10px;
+  padding: 4px;
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 19px;
+  cursor: pointer;
+  text-shadow: 2px 2px #000000;
+}
+
+ul.header-navbar li.header-navbar_list:hover ul.header-navbar_sublist{
+  opacity: 1;
+  visibility: visible;
+  top:70px;
+  width: 300px;
+}
+
+ul.header-navbar li.header-navbar_list ul.header-navbar_sublist {
+  padding: 0;
+  position: absolute;
+  top:-100px;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+}
+
+ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
+  list-style: none;
+  padding: 0;
+  margin: 0 ;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  text-shadow: none;
+}
+
 
 .body{
+  height: calc(100vh - 100px);
   width: 100%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-  background-image: url('../images/fondo.jpg');
-  background-size: cover;
-  padding: 41px;
-  height: calc(100vh - 120px - 80px);
 }
 
-.body-custom{
-    position: relative;
+
+.footer{
+  font-family: 'Open Sans';
+  color: white;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(179, 177, 177);
+  padding: 0;
+  margin: 0;
+  bottom: 50%;
+  box-shadow: 1px 1px 20px 3px black ;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.body-slogan{
-    position: absolute;
-    bottom:0%;
-    left: 5%;
-    font-family: getshow;
-    color: black;
-    text-shadow: black 0.1em 0.1em 0.2em;
-    font-size: 6vw;
+.footer-left {
+  flex: 33.33%;
+  text-align: center;
 }
 
-.body-container{
+.footer-center {
+  flex: 33.33%;
+  text-align: center;
+}
+
+.footer-right{
+  flex: 33.33%;
+  text-align: center;
+}
+
+.content{
+  display: grid;
+  width: 40%;
+  height: 550px;
+  background-color:  rgb(206, 7, 7);
+  margin: 3%;
+  border-radius: 20%;
+  box-shadow: 0px 0px 30px 0px black;
+  justify-content: center;
+  padding: 1.5%;
+  font-family: Bigtime;
+  text-shadow: 1px 2px #000000;
+  color: white;
+  font-size: 27px;
+  text-align: center;
+}
+
+.tittle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-form{
+  width: 50%;
+  height: 100%;
+  background-color: rgb(206, 7, 7);
+  border-radius: 10%;
+  box-shadow: 0px 0px 30px 0px black; 
+  padding: 2%;
+  font-family: Bigtime;
+  display: block;
+}
+
+.content-form span{
     display: flex;
-    background-color: rgb(249, 183, 134);
-    box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.4);
-    border-radius: 20px;
-    padding: 20px; 
-    text-align: justify;
-    font-family: getshow;
+    justify-content: center;
+    margin-bottom: 4%;
+    font-size: 25px;
     color: white;
-    position: absolute;
-    justify-content: flex-end;
-    margin-left: 58%;
 }
 
-.body-container__tittle{
-    display: flex;
-    justify-content: center;
-    font-family: donkey;
-}
-
-.body-container__tittle h1{
-    text-shadow: black 0.1em 0.1em 0.2em
-}
-
-
-/*Aviones*/
-
-.aviones-container{
-    display: flex;
-    background-color: rgba(255, 135, 17, 0.61);
-    box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.4);
-    border-radius: 20px;
-    padding: 20px; 
-    margin-left: 6.5%;
-    color: white;
-}
-
-.aviones-container__item{
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.aviones-container__button{
-    font-family: donkey;
-    justify-content: center;
-    background-color: pink;
-    display: inline-block;
-    font-weight: 400;
-    color: #212529;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid black;
-    padding: .375rem .75rem;
-    font-size: 1.5rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    cursor: pointer;
-    box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.4);
-    width: 90px;
-    margin-left: 10%;
-}
-
-.modal-body-tam{
-    width: 500px;
-}
-
-/*Vuelos*/
-
-.body-table{
-    background-color: rgba(231, 119, 158, 0.973);
-    border-color: black;
-    font-family: donkey;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 1rem;
-    font-size: 20px;
-    border-radius: 10px;
-    color: black;
-}
-
-.body-table td, .body-table th{
-    padding: .75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
-}
-
-.modal-tittle{
-    font-family: donkey;
-}
-
-.modal-input{
-    border-radius: 10px;
-    margin-left: 10px;
-    font-family: donkey;
-}
-
-.model-label{
-    font-family: donkey;
-    font-size: 30px;
-}
-
-.modal-btn{
-    font-family: donkey;
-    margin-left: 80%;
-    background-color: pink;
-    display: inline-block;
-    font-weight: 400;
-    color: #212529;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid black;
-    padding: .375rem .75rem;
-    font-size: 1.5rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    cursor: pointer;
-    box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.4);
+.custom-content{
+  display: flex;
+  justify-content: center;
+  margin: 5%;
 }

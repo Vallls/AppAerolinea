@@ -1,5 +1,5 @@
 const sequelize = require('sequelize');
-const db = require('../config/db');
+const db = require('../config/database');
 
 
 const OrigenDestino = db.define('OrigenDestino', {
@@ -79,4 +79,5 @@ const OrigenDestino = db.define('OrigenDestino', {
     timestamps: false,
     freezeTableName: true
 });
+
 module.exports = OrigenDestino;

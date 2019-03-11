@@ -6,46 +6,37 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/aviones', function(req, res, next) {
-  res.render('aviones');
+const aeropuertoC = require('../controllers/aeropuertoC');
+const rutasC = require('../controllers/rutasC');
+const userC = require('../controllers/userC');
+
+router.get('/rutas', (req,res) => {
+  aeropuertoC.getAeropuerto(data => res.render('rutas', {aeropuerto: data}))
 });
 
-const origenDestinoController = require('../controllers/ODController');
-router.get('/vuelos', (req,res) => {
-  origenDestinoController.getOrigenDestino(data => res.render('vuelos', {origendestino: data}))
-});
-
-router.post('/Vuelos', (req,res) => {
+router.post('/AddRutas', (req,res) => {
   console.log(req.body);
-  origenDestinoController.createOrigenDestino(req.body)
-  res.redirect('/vuelos');
+  rutasC.createRutas(req.body)
+  res.redirect('rutas');
 });
 
-router.post("/vuelos/:id", (req, res) => {
-  if (!!req.params.id) {
-    origenDestinoController.deleteOrigenDestino(req.params.id, (err) => {
-      if (err)
-        res.json({
-          success: false,
-          msg: 'Failed to delete product'
-        });
-      else
-        res.redirect('/vuelos');
-    });
-  }
+router.get('/boletos', function(req, res, next) {
+  res.render('boletos');
 });
 
-router.post("/vueloss/:id", (req, res) => {
-  if (!!req.params.id) {
-    origenDestinoController.updateOrigenDestino({id: req.params.id, Precio: req.body.Precio}, (err) => {
-      if (err)
-        res.json({
-          success: false,
-          msg: 'Failed to update product'
-        });
-      else
-        res.redirect('/vuelos');
-    });
-  }
+router.post('/GetUser', (req,res) => {
+  let { CI } = req.body;
+  userC.getUser(CI, (user, err)=> {
+    if(!!err){
+      res.render('registroU', null);
+      console.log(err);
+      throw err;
+
+    }else {
+      res.render('reservarB', {user});
+      console.log({user});
+    }
+  })
 });
-module.exports=router;
+
+module.exports = router;

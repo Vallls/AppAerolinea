@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 Sequelize.Promise = global.Promise;
-const db = require('../config/db');
+const db = require('../config/database');
 const OrigenDestino = require('../models/OrigenDestino');
 
 const controller = {};
