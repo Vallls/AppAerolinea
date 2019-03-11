@@ -1,0 +1,106 @@
+extends layout
+
+block content
+
+    .body
+        .modal.fade(id="Ver" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+            .modal-dialog.modal-lg(role="document")
+                .modal-content
+                    .modal-header
+                        h5.modal-title(id="exampleModalLabel") Lista Origen/Destino
+                        button.close(type="button" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden="true") &times;
+                    .modal-body
+                        .col-12
+                            table.body-table
+                                thead
+                                    tr 
+                                        th(scope='col') ID Vuelo
+                                        th(scope='col') Origen
+                                        th(scope='col') Destino
+                                        th(scope='col') Precio
+                                        th(scope='col') # Equipaje Economico
+                                        th(scope='col') # Equipaje PC
+                                        th(scope='col') Peso Max Equipaje
+                                        th(scope='col') Duracion
+                                tbody
+                                - for (var i = 0; i < origendestino.length; i++)
+                                  tr
+                                    th(scope='row') #{origendestino[i].id}
+                                        form(action=`vuelos/${origendestino[i].id}`,method="POST")
+                                            button.aviones-container__button(type='submit') Eliminar  
+                                    td #{origendestino[i].Origen}
+                                    td #{origendestino[i].Destino}
+                                    td #{origendestino[i].Precio}
+                                        form(action=`vueloss/${origendestino[i].id}`,method="POST")
+                                            label(for='Precio')
+                                            input.form-control.input-sm(type="number" aria-describedby='precio' placeholder='Precio' name='Precio' style="margin-bottom:2px")
+                                            button.aviones-container__button(type='submit') Update
+                                    td #{origendestino[i].EE}
+                                    td #{origendestino[i].EPC}
+                                    td #{origendestino[i].PME}
+                                    td #{origendestino[i].Duracion}
+                                                        
+                    .modal-footer
+                        button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+        .modal.fade(id="Agregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+            .modal-dialog(role="document")
+                .modal-content
+                    .modal-header
+                        h5.modal-title(id="exampleModalLabel") Agregar Origen/Destino
+                        button.close(type="button" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden="true") &times;
+                    .modal-body
+                        form(method="POST" action="/Vuelos")
+                            .form-group
+                                label.model-label(for='idvuelo') ID Vuelo
+                                input.modal-input(type="text" aria-describedby='idvuelo' placeholder='IDVuelo' name='id')
+                            .form-group
+                                label.model-label(for='origen') Origen
+                                input.modal-input(type="text" aria-describedby='origen' placeholder='Origen' name='Origen')
+                            .form-group
+                                label.model-label(for='destino') Destino
+                                input.modal-input(type="text" aria-describedby='destino' placeholder='Destino' name='Destino')
+                            .form-group
+                                label.model-label(for='precio') Precio
+                                input.modal-input(type="number" aria-describedby='precio' placeholder='Precio' name='Precio')
+                            .form-group
+                                label.model-label(for='EC') Equipaje Economica
+                                input.modal-input(type="number" aria-describedby='EC' placeholder='Equipaje Economica' name='EE')
+                            .form-group
+                                label.model-label(for='EPC') Equipaje Primera Clase
+                                input.modal-input(type="number" aria-describedby='EPC' placeholder='Equipaje Primera Clase' name='EPC')
+                            .form-group
+                                label.model-label(for='PME') Peso Maximo por Equipaje
+                                input.modal-input(type="number" aria-describedby='PME' placeholder='Peso Maximo por Equipaje' name='PME')
+                            .form-group
+                                label.model-label(for='duracion') Duracion
+                                input.modal-input(type="text" aria-describedby='duracion' placeholder='Duracion' name='Duracion')
+                            button.modal-btn(type="submit") Agregar       
+                    .modal-footer
+                        button.modal-btn(type="button" data-dismiss="modal") Close
+        .row
+            .col-3.aviones-container
+                .col-12
+                    .row.body-container__tittle
+                        h1 Lista de Origenes/Destinos
+                    .row
+                        img(src="../images/cartelera.jpg", width="100%", height="250px", style="border-radius: 20px")
+                    .row
+                        .col-6.aviones-container__item
+                            button.aviones-container__button(type="button" data-toggle="modal" data-target="#Ver")
+                                h5 Ver 
+                        .col-6.aviones-container__item
+                            button.aviones-container__button(type="button" data-toggle="modal" data-target="#Agregar")
+                                h5 Agregar 
+            .col-3.aviones-container
+                .col-12
+                    .row.body-container__tittle
+                         
+            .col-3.aviones-container
+                .col-12
+                    .row.body-container__tittle
+    
+        - function capturar()
+            var updateP=document.getElementByName("Precio").value
+

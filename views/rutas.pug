@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    .body
+        .custom-content
+            .content-form
+                span Agregar Ruta
+                form(method="POST" action="/AddRutas")
+                    .form-group
+                        label.labels(for='idruta') ID Ruta
+                        input.inputs(type="number" aria-describedby='idruta' placeholder='IDRuta' name='idruta')
+                    .form-group
+                        label.labels(for='origenIATA') Origen
+                        select(name='origenIATA' form='origenIATA')
+                            - for (var i = 0; i < aeropuerto.length; i++)
+                                option(value='#{aeropuerto[i].IATA}') #{aeropuerto[i].IATA}
+                    .form-group
+                        label.labels(for='destinoIATA') Destino
+                        select(name='destinoIATA' form='destinoIATA')
+                            - for (var i = 0; i < aeropuerto.length; i++)
+                                option(value='#{aeropuerto[i].IATA}') #{aeropuerto[i].IATA}   
+                    .form-group
+                        label.labels(for='duracion') Duracion
+                        input.inputs(type="text" aria-describedby='duracion' placeholder='Duracion' name='duracion')
+                    .form-group
+                        label.labels(for='frecuencia') Frecuencia
+                        input.inputs(type="text" aria-describedby='frecuencia' placeholder='Frecuencia' name='frecuencia')
+                    .form-group
+                        label.labels(for='horsalidp') Horario Salida Programado
+                        input.inputs(type="text" aria-describedby='horsalidp' placeholder='Salida Programada' name='horsalidp')
+                    button.buttons(type="submit" onclick="capturar()") Agregar
+            

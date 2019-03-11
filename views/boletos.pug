@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .body
+        .custom-content
+            .content-form
+                span Reserva Boleto
+                        form(method="POST" action="/GetUser")
+                            .form-group
+                                label.labels(for='CI') Cedula de Identidad
+                                input.inputs(type="number" aria-describedby='CI' placeholder='Cedula' name='CI' id='CI')
+                            button.buttons(type="submit") Revisar
+                              
+
+    
+        
+    
+        
