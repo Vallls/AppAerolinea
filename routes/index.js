@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 const aeropuertoC = require('../controllers/aeropuertoC');
 const rutasC = require('../controllers/rutasC');
 const userC = require('../controllers/userC');
+const telefonoC = require('../controllers/telefonoC');
 
 router.get('/rutas', (req,res) => {
   aeropuertoC.getAeropuerto(data => res.render('rutas', {aeropuerto: data}))
@@ -38,5 +39,13 @@ router.post('/GetUser', (req,res) => {
     }
   })
 });
+
+router.post('/RegisterUser', (req,res) => {
+
+  userC.createUser({CI: req.body.CI, Nombre: req.body.Nombre, Apellido: req.body.Apellido, Sexo: req.body.Sexo, Correo: req.body.Correo, FechaNac: req.body.FechaNac});
+  telefonoC.createTelefono({UsuarioCI: req.body.CI, telefono: req.body.telefonoC});
+  telefonoC.createTelefono({UsuarioCI: req.body.CI, telefono: req.body.telefono});
+  res.redirect('boletos');
+})
 
 module.exports = router;
