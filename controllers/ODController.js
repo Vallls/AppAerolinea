@@ -13,7 +13,7 @@ controller.getOrigenDestino = async function (callback) {
         let origendestino = response.map(result => result.dataValues);
         console.log(origendestino);
         callback(origendestino, null);
-    }catch (error) {
+    }catch (error) { 
         callback(null,error);
     }
 };

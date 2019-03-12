@@ -34,8 +34,7 @@ const user = db.define('Usuario', {
         type: sequelize.STRING,
         allowNull: false,
         validate: {
-            notEmpty: true,
-            isAlpha: true
+            notEmpty: true
         }
     },
 
