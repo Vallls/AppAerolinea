@@ -56,6 +56,22 @@
 }
 
 
+@font-face{
+  font-family: 'NORMAL';
+  src: url('../fonts/Typography\ Times\ Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face{
+  font-family: 'CORRIDO';
+  src: url('../fonts/Typography\ Times\ Bold\ Italic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 
 .header {
   display: flex;
@@ -65,7 +81,6 @@
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url('../images/aviones-4k.jpg');
   background-size: cover;
   width: 100%;
@@ -120,6 +135,7 @@ ul.header-navbar li.header-navbar_list:hover ul.header-navbar_sublist{
   width: 300px;
   color: rgb(8, 2, 68);
   font-weight: bolder;
+  text-decoration: none;
   text-shadow: 2px 2px #2110b8;
   font-size: 20px;
 }
@@ -128,10 +144,13 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist {
   padding: 0;
   position: absolute;
   top:-100px;
+  text-decoration: none;
   left: 0;
   opacity: 0;
   visibility: hidden;
   transition: 1s;
+  color: rgb(8, 2, 68);
+  font-weight: bolder;
 }
 
 ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
@@ -142,6 +161,8 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
   cursor: pointer;
   font-size: 15px;
   text-shadow: none;
+  color: rgb(8, 2, 68);
+  font-weight: bolder;
 }
 
 
@@ -180,7 +201,7 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
   display: grid;
   width: 40%;
   height: 90%;
-  background-color:  rgb(206, 7, 7);
+  background-color:  rgba(11, 55, 112, 0.678);
   margin: 3%;
   border-radius: 23%;
   box-shadow: 0px 0px 30px 0px black;
@@ -191,6 +212,7 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
   font-size: 27px;
   text-align: center;
 }
+
 
 .tittle{
   font-family: LOV;
@@ -212,6 +234,7 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
   box-shadow: 0px 0px 30px 0px black; 
   padding: 2%;
   font-family: Bigtime;
+  text-decoration: none;
   display: block;
 }
 
@@ -219,7 +242,8 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
     display: flex;
     justify-content: center;
     margin-bottom: 4%;
-    font-size: 25px;
+    font-size: 32px;
+    text-shadow: 2px 2px #07013f;
     color: white;
 }
 
@@ -240,4 +264,31 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
   box-shadow: 0px 1px 20px 0px black;
   margin-bottom: 1%;
   padding: 1%;
+}
+.buttons{
+  font-family: FLORENCE;
+  font-weight: bolder;
+  color:#0d0550;
+  border-color: rgb(3, 72, 199);
+  border-radius: 6px;
+}
+
+.labels{
+  font-family: NORMAL;
+  font-weight: bolder; 
+  font-size: 23px;
+}
+
+.inputs{
+  font-family: CORRIDO;
+  font-weight: bolder; 
+  margin-left: 2%;
+  font-size: 18px;
+  border-radius: 40px;
+}
+
+.selects{
+  font-family: CORRIDO; 
+  margin-left: 2%;
+  font-size: 17px;
 }

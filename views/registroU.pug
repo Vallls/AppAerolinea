@@ -5,29 +5,29 @@ block content
         .custom-content
             .content-form
                 span Registrar Usuario
-                        form(method="POST" action="/RegisterUser")
-                            .form-group
-                                label.labels(for='CI') Cedula de Identidad
-                                input.inputs(type="number" aria-describedby='CI' placeholder='Cedula' name='CI' id='CI')
-                            .form-group
-                                label.labels(for='Nombre') Nombre
-                                input.inputs(type="text" aria-describedby='Nombre' placeholder='Nombre' name='Nombre' id='Nombre')
-                            .form-group
-                                label.labels(for='Apellido') Apellido
-                                input.inputs(type="text" aria-describedby='Apellido' placeholder='Apellido' name='Apellido' id='Apellido')
-                            .form-group
-                                label.labels(for='Sexo') Sexo
-                                input.inputs(type="text" aria-describedby='Sexo' placeholder='Sexo' name='Sexo' id='Sexo')
-                            .form-group
-                                label.labels(for='Correo') Correo
-                                input.inputs(type="text" aria-describedby='Correo' placeholder='Correo' name='Correo' id='Correo')
-                            .form-group
-                                label.labels(for='FechaNac') Fecha de Nacimiento
-                                input.inputs(type="date" aria-describedby='FechaNac' placeholder='Fecha de Nacimiento' name='FechaNac' id='FechaNac')
-                            .form-group
-                                label.labels(for='telefono') Telefono Casa
-                                input.inputs(type="number" aria-describedby='telefono' placeholder='Telefono Casa' name='telefonoC' id='telefonoC')
-                            .form-group
-                                label.labels(for='telefono') Telefono Celular
-                                input.inputs(type="number" aria-describedby='telefono' placeholder='Telefono Celular' name='telefono' id='telefono')
-                            button.buttons(type="submit") Registrar
+                form(method="POST" action="/RegisterUser")
+                    .form-group
+                        label.labels(for='CI') Cédula de Identidad
+                        input.inputs(type="number" aria-describedby='CI' placeholder='Cédula' name='CI' id='CI')
+                    .form-group
+                        label.labels(for='Nombre') Nombre
+                        input.inputs(type="text" aria-describedby='Nombre' placeholder='Nombre' name='Nombre' id='Nombre')
+                    .form-group
+                        label.labels(for='Apellido') Apellido
+                        input.inputs(type="text" aria-describedby='Apellido' placeholder='Apellido' name='Apellido' id='Apellido')
+                    .form-group
+                        label.labels(for='Sexo') Sexo
+                        input.inputs(type="text" aria-describedby='Sexo' placeholder='Sexo' name='Sexo' id='Sexo')
+                    .form-group
+                        label.labels(for='Correo') Correo electrónico
+                        input.inputs(type="text" aria-describedby='Correo' placeholder='Correo' name='Correo' id='Correo')
+                    .form-group
+                        label.labels(for='FechaNac') Fecha de Nacimiento
+                        input.inputs(type="date" aria-describedby='FechaNac' placeholder='Fecha de Nacimiento' name='FechaNac' id='FechaNac')
+                    .form-group
+                        label.labels(for='telefono') Teléfono Casa
+                        input.inputs(type="number" aria-describedby='teléfono' placeholder='Telefono Casa' name='telefonoC' id='telefonoC')
+                    .form-group
+                        label.labels(for='telefono') Teléfono Celular
+                        input.inputs(type="number" aria-describedby='telefono' placeholder='Teléfono Celular' name='telefono' id='telefono')
+                    button.buttons(type="submit") Registrar
