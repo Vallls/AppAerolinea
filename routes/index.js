@@ -10,6 +10,7 @@ const aeropuertoC = require('../controllers/aeropuertoC');
 const rutasC = require('../controllers/rutasC');
 const userC = require('../controllers/userC');
 const telefonoC = require('../controllers/telefonoC');
+const vueloC = require('../controllers/vueloC');
 
 router.get('/rutas', (req,res) => {
   aeropuertoC.getAeropuerto(data => res.render('rutas', {aeropuerto: data}))
@@ -47,5 +48,9 @@ router.post('/RegisterUser', (req,res) => {
   telefonoC.createTelefono({UsuarioCI: req.body.CI, telefono: req.body.telefono});
   res.redirect('boletos');
 })
+
+router.get('/reservarB', (req,res) => {
+  aeropuertoC.getVuelos(data => res.render('reservarB', {vuelo: data}))
+});
 
 module.exports = router;

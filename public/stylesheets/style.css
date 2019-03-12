@@ -228,3 +228,16 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
   justify-content: center;
   margin: 5%;
 }
+
+.disabled{
+  width: 100%;
+  height: 40px;
+  background-color: #a2a2a2;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  border-radius: 20px;
+  box-shadow: 0px 1px 20px 0px black;
+  margin-bottom: 1%;
+  padding: 1%;
+}

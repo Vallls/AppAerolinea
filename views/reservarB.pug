@@ -2,5 +2,14 @@ extends layout
 
 block content
     .body
-        a #{user.CI}
-        a #{user.Nombre}
+        .custom-content
+            .content-form
+                span Reservar Boleto
+                form(method="POST" action="/RegisterUser")
+                    .disabled
+                        span Cedula: #{user.CI} Nombre: #{user.Nombre} #{user.Apellido}
+                    .form-group
+                        label.labels(for='origenIATA') Vuelos
+                        select(name='origenIATA' form='origenIATA')
+                            - for (var i = 0; i < vuelo.length; i++)
+                                option(value='#{vuelo[i].idvuelo}') #{vuelo[i].Datos}

@@ -5,6 +5,7 @@ const boleto = db.define('Boleto', {
     idboleto: {
         type: sequelize.INTEGER,
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
         validate: {
             isNumeric: true,
