@@ -3,7 +3,7 @@ extends layout
 block content
   .body
     .content
-      span.tittle Nuestros Destinos mas visitados
+      span.tittle Bienvenido a Aerolíneas Guacamaya
       #carouselExampleIndicators.carousel.slide(data-ride='carousel')
         ol.carousel-indicators
           li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
@@ -11,11 +11,11 @@ block content
           li(data-target='#carouselExampleIndicators' data-slide-to='2')
         .carousel-inner
           .carousel-item.active
-            img.d-block.w-100(src='../images/1.jpg', height="300px")
+            img.d-block.w-100(src='../images/1.jpg', height="300px", style="border-radius:25%" )
           .carousel-item
-            img.d-block.w-100(src='../images/2.jpeg' height="300px")
+            img.d-block.w-100(src='../images/2.jpeg' height="300px", style="border-radius:25%" )
           .carousel-item
-            img.d-block.w-100(src='../images/3.jpg' height="300px")
+            img.d-block.w-100(src='../images/3.jpg' height="300px", style="border-radius:25%" )
         a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
           span.carousel-control-prev-icon(aria-hidden='true')
           span.sr-only Previous
