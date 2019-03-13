@@ -12,4 +12,4 @@ block content
                         label.labels(for='origenIATA') Vuelos
                         select(name='origenIATA' form='origenIATA')
                             - for (var i = 0; i < vuelo.length; i++)
-                                option(value='#{vuelo[i].idvuelo}') #{vuelo[i].Datos}
+                                option(value=`${vuelo[i].idvuelo}`) #{vuelo[i].Datos}

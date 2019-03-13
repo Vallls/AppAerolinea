@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    .body
+        .custom-content
+            .content-form
+             span Tripulacion
+             form(method="POST" action="/ReviewTrip")
+                    .form-group
+                        label.labels(for='CI') Cédula de Identidad
+                        input.inputs(type="number" min="0" max=99999999 aria-describedby='CI' placeholder='Cédula' name='CI' id='CI')
+                    button.buttons(type="submit", style="font-size:25px") Revisar

@@ -11,14 +11,14 @@ block content
                         input.inputs(type="number" aria-describedby='idruta' placeholder='IDRuta' name='idruta')
                     .form-group
                         label.labels(for='origenIATA') Origen  
-                        select.selects(name='origenIATA' form='origenIATA')
+                        select.selects(name='origenIATA', id='origenIATA')
                             - for (var i = 0; i < aeropuerto.length; i++)
-                                option(value='#{aeropuerto[i].IATA}') #{aeropuerto[i].IATA}
+                                option(value=`${aeropuerto[i].IATA}`) #{aeropuerto[i].IATA}
                     .form-group
                         label.labels(for='destinoIATA') Destino  
-                        select.selects(name='destinoIATA' form='destinoIATA')
+                        select.selects(name='destinoIATA', id='destinoIATA')
                             - for (var i = 0; i < aeropuerto.length; i++)
-                                option(value='#{aeropuerto[i].IATA}') #{aeropuerto[i].IATA}   
+                                option(value=`${aeropuerto[i].IATA}`) #{aeropuerto[i].IATA}   
                     .form-group
                         label.labels(for='duracion') Duración  
                         input.inputs(type="text" aria-describedby='duracion' placeholder='Duración' name='duracion')

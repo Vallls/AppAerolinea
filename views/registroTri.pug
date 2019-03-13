@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    .body
+        .custom-content
+            .content-form
+                span Reservar Boleto
+                form(method="POST" action="/RegisterTri")
+                    .disabled
+                        span Cedula: #{user.CI} Nombre: #{user.Nombre} #{user.Apellido}
+                    .form-group

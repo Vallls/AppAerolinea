@@ -18,7 +18,6 @@ const ruta = db.define('Rutas', {
         allowNull: false,
         validate: {
             notEmpty: true,
-            isAlpha: true
         }
     },
 
@@ -36,7 +35,6 @@ const ruta = db.define('Rutas', {
         allowNull: false,
         validate: {
             notEmpty: true,
-            isAlpha: true
         }
     },
 

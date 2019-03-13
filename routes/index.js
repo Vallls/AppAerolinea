@@ -35,7 +35,30 @@ router.post('/GetUser', (req,res) => {
       throw err;
 
     }else {
-      res.render('reservarB', {user});
+      vueloC.getVuelos((vuelo, err) => {
+        if(!!err){
+          res.render('boletos', null);
+          console.log(err);
+          throw err;
+    
+        }else {
+          res.render('reservarB', {user}, {vuelo})
+        }
+      })
+    }
+  })
+});
+
+router.post('/ReviewTrip', (req,res) => {
+  let { CI } = req.body;
+  userC.getUser(CI, (user, err)=> {
+    if(!!err){
+      res.render('registroU', null);
+      console.log(err);
+      throw err;
+
+    }else {
+      res.render('registroTri', {user})
       console.log({user});
     }
   })
@@ -48,9 +71,5 @@ router.post('/RegisterUser', (req,res) => {
   telefonoC.createTelefono({UsuarioCI: req.body.CI, telefono: req.body.telefono});
   res.redirect('boletos');
 })
-
-router.get('/reservarB', (req,res) => {
-  aeropuertoC.getVuelos(data => res.render('reservarB', {vuelo: data}))
-});
 
 module.exports = router;
