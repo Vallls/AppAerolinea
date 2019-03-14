@@ -53,19 +53,15 @@ router.post('/GetUser', (req,res) => {
       throw err;
 
     }else {
-      vueloC.getVuelos((vuelo, err) => {
-        if(!!err){
-          res.render('boletos', null);
-          console.log(err);
-          throw err;
+    vueloC.getVuelos(data => res.render('reservarB', {data,user},console.log({data,user})))
     
-        }else {
-          res.render('reservarB', {user}, {vuelo})
-        }
-      })
     }
   })
 });
+
+router.get('/reservarB', (req,res)=> {
+  vueloC.getVuelos(data => res.render('reservarB', {vuelo: data}))
+})
 
 router.post('/ReviewTrip', (req,res) => {
   let { CI } = req.body;
@@ -81,7 +77,6 @@ router.post('/ReviewTrip', (req,res) => {
     }
   })
 });
-
 
 const telefonoC = require('../controllers/telefonoC');
 router.post('/RegisterUser', (req,res) => {

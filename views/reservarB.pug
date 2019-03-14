@@ -3,13 +3,18 @@ extends layout
 block content
     .body
         .custom-content
-            .content-form
+            .content-formRu
                 span Reservar Boleto
                 form(method="POST" action="/RegisterUser")
-                    .disabled
-                        span Cedula: #{user.CI} Nombre: #{user.Nombre} #{user.Apellido}
+                    -for(var i = 0; i < data.length; i++)
+                        label.labels(for='origenIATA') Cedula
+                        input.inputs(type='text' value=`${user.CI}` disabled)
+                        label.labels(for='origenIATA') Nombre
+                        input.inputs(type='text' value=`${user.Nombre}` disabled)
+                        label.labels(for='origenIATA') Apellido
+                        input.inputs(type='text' value=`${user.Apellido}` disabled) 
                     .form-group
-                        label.labels(for='origenIATA') Vuelos
-                        select(name='origenIATA' form='origenIATA')
-                            - for (var i = 0; i < vuelo.length; i++)
-                                option(value=`${vuelo[i].idvuelo}`) #{vuelo[i].Datos}
+                            label.labels(for='origenIATA') Vuelos
+                            select.selects(name='origenIATA' form='origenIATA')
+                                - for (let i of data)
+                                    option(value=`${i.idvuelo}`) #{i.idruta} #{i.origenIATA} #{i.destinoIATA} #{i.horsalidp} #{i.fechavuelo}

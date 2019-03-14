@@ -5,19 +5,6 @@ const ruta = require('../models/rutas')
 
 const controller = {};
 
-controller.getRutas = async function (callback) {
-    try{
-        let response = await ruta.findAll({
-            
-        });
-        let ruta = response.map(result => result.dataValues);
-        console.log(ruta);
-        callback(ruta, null);
-    }catch (error) {
-        callback(null,error);
-    }
-};
-
 controller.createRutas = async function (data) {
     
     console.log(data.idruta, data.duracion, data.frecuencia, data.horsalidp, data.origenIATA, data.destinoIATA);
@@ -37,5 +24,19 @@ controller.updateRutas = async function (data, callback) {
         callback(error);
     }
 };
+
+controller.getRutas = async function (callback){
+    try{
+        db.query(
+            "SELECT * FROM `Rutas`"
+        ).spread((data,metada) => {
+            console.log(data);
+            callback(data,null);
+        });
+
+    }catch(error){
+        callback(error,null);
+    }
+}
 
 module.exports = controller;

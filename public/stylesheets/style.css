@@ -229,15 +229,36 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
 }
 
 .content-form{
-  width: 50%;
+  width: 40%;
   height: 100%;
   background-color: rgba(15, 155, 148, 0.788);
-  border-radius: 10%;
+  border-radius: 30px;
   box-shadow: 0px 0px 30px 0px black; 
   padding: 2%;
   font-family: Bigtime;
   text-decoration: none;
   display: block;
+}
+
+.content-formRu{
+  width: 80%;
+  height: 100%;
+  background-color: rgba(15, 155, 148, 0.788);
+  border-radius: 30px;
+  box-shadow: 0px 0px 30px 0px black; 
+  padding: 2%;
+  font-family: Bigtime;
+  text-decoration: none;
+  display: block;
+}
+
+.content-formRu span{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4%;
+  font-size: 32px;
+  text-shadow: 2px 2px #07013f;
+  color: white;
 }
 
 .content-form span{
@@ -285,8 +306,10 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
   font-family: CORRIDO;
   font-weight: bolder; 
   margin-left: 2%;
+  margin-right: 2%;
   font-size: 18px;
   border-radius: 40px;
+  text-align: center;
 }
 
 .selects{
