@@ -9,11 +9,12 @@ const controller = {};
 controller.getVuelos = function(callback){
         var x;
         db.query(
-            "SELECT CONCAT(`Rutas`.`idruta`, ' ',`Rutas`.`origenIATA`, ' ',`Rutas`.`destinoIATA`, ' ',`Rutas`.`horsalidp`, ' ',`Vuelo`.`fechavuelo`) AS `Datos`" + 
+            "SELECT `Rutas`.`idruta`, ' ',`Rutas`.`origenIATA`, ' ',`Rutas`.`destinoIATA`, ' ',`Rutas`.`horsalidp`, ' ',`Vuelo`.`fechavuelo`" + 
             "FROM `Rutas`" +
             "INNER JOIN `Vuelo` ON `Rutas`.`idruta` = `Vuelo`.`RutaIdruta`"
         ).spread((data,metada) => {
             x = data;
+            console.log(x);  
         });
         if (x) {
           callback(x, null);

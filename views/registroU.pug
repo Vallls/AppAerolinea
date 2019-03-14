@@ -17,7 +17,9 @@ block content
                         input.inputs(type="text" aria-describedby='Apellido' placeholder='Apellido' name='Apellido' id='Apellido')
                     .form-group
                         label.labels(for='Sexo') Sexo
-                        input.inputs(type="text" aria-describedby='Sexo' placeholder='Sexo' name='Sexo' id='Sexo')
+                        select.selects(name='Sexo', id='Sexo')
+                            option(value='Femenino') Femenino
+                            option(value='Masculino') Masculino
                     .form-group
                         label.labels(for='Correo') Correo electrónico
                         input.inputs(type="text" aria-describedby='Correo' placeholder='Correo' name='Correo' id='Correo')
