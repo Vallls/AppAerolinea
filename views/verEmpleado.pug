@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    .body
+        .custom-content
+            .content-formRu
+                span Update Empleado
+                table.body-table
+                    thead
+                        tr 
+                            th.labelsTa(scope='col') CI
+                            th.labelsTa(scope='col') Sueldo
+                            th.labelsTa(scope='col') Cargo
+                    tbody
+                    - for (var i = 0; i < empleado.length; i++)
+                        form(action=`UpdateEmpleado/${empleado[i].id}`,method="POST")
+                            tr
+                                th
+                                    input.inputsT(type="number" placeholder='idpista' name='UsuarioCI' id='UsuarioCI' value=`${empleado[i].UsuarioCI}`)            
+                                td.labelsTa(style="font-size:10px") (Piloto, CoPiloto, Azafata, Medico, Enfermero, Administrativo, Gerente)
+                                    input.inputsT(type="text" placeholder='distancia' name='cargo' id='cargo' value=`${empleado[i].cargo}`)
+                                td
+                                    input.inputsT(type="text" placeholder='disponibilidad' name='sueldo' id='sueldo' value=`${empleado[i].sueldo}`)
+                                td
+                                    button.buttons(type="submit") Update
+        .custom-content
+            .content-formRu
+                span Read and Delate Empleado
+                table.body-table
+                    thead
+                            tr 
+                                th.labelsTa(scope='col') CI
+                                th.labelsTa(scope='col') Cargo
+                                th.labelsTa(scope='col') Sueldo
+                    tbody
+                    - for (var i = 0; i < empleado.length; i++)
+                        tr
+                            th.labelsTaB(scope='row') #{empleado[i].UsuarioCI}                 
+                            td.labelsTaB #{empleado[i].cargo}
+                            td.labelsTaB #{empleado[i].sueldo}
+                            td
+                                form(action=`DelateEmpleado/${empleado[i].id}`,method="POST")
+                                    button.buttons Eliminar

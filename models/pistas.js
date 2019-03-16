@@ -6,7 +6,6 @@ const pistas = db.define('Pistas', {
     idpista: {
         type: sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true,
         validate: {
             isNumeric: true,
             notEmpty: true
@@ -23,11 +22,11 @@ const pistas = db.define('Pistas', {
     },
 
     disponibilidad: {
-        type: sequelize.TINYINT,
+        type: sequelize.BOOLEAN,
         allowNull: false,
+        defaultValue: true,
         validate: {
             notEmpty: true,
-            isNumeric: true
         }
     }
 }, {

@@ -317,3 +317,75 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
   margin-left: 2%;
   font-size: 17px;
 }
+
+.labelsTa{
+  font-family: NORMAL;
+  font-weight: bolder; 
+  font-size: 20px;
+  text-align: center;
+  margin-left: 2px;
+}
+.labelsTaB{
+  font-family: NORMAL;
+  font-weight: bolder; 
+  font-size: 18px;
+  text-align: center;
+  margin-left: 2px;
+  color: white;
+}
+
+.content-formRuT{
+  width: 60%;
+  height: 100%;
+  background-color: rgba(15, 155, 148, 0.788);
+  border-radius: 30px;
+  box-shadow: 0px 0px 30px 0px black; 
+  padding: 2%;
+  font-family: Bigtime;
+  text-decoration: none;
+  display: block;
+}
+
+.content-formRuT span{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4%;
+  font-size: 32px;
+  text-shadow: 2px 2px #07013f;
+  color: white;
+}
+
+.inputsT{
+  font-family: CORRIDO;
+  font-weight: bolder; 
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  border-radius: 40px;
+  text-align: center;
+  width: 70%;
+}
+
+.buttonsS{
+  font-family: FLORENCE;
+  font-weight: bolder;
+  border-color: rgb(3, 72, 199);
+  border-radius: 6px;
+  background-color:rgb(228, 228, 228);
+  width: 18%;
+  height: 80%;
+  text-align: center;
+  border-style: groove;
+  
+}
+
+.buttonsS a:link{
+  text-decoration: none;
+  color:#0d0550;
+}
+
+.buttonsS a{
+  color:#0d0550;
+}

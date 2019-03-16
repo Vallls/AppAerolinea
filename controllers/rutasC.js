@@ -13,10 +13,16 @@ controller.createRutas = async function (data) {
 
 controller.updateRutas = async function (data, callback) {
     try {
-        let response = await ruta.update(data,
+        let response = await ruta.update( {
+            duracion: data.duracion,
+            frecuencia: data.frecuencia,
+            horsalidp: data.horsalidp,
+            origenIATA: data.origenIATA,
+            destinoIATA: data.destinoIATA
+        },
          {
             where: {
-                id:data.id
+                idruta:data.idruta
             }
         });
         callback(null);
@@ -28,7 +34,8 @@ controller.updateRutas = async function (data, callback) {
 controller.getRutas = async function (callback){
     try{
         db.query(
-            "SELECT * FROM `Rutas`"
+            "SELECT * FROM `Rutas`"+
+            "ORDER BY `Rutas`.horsalidp ASC"
         ).spread((data,metada) => {
             console.log(data);
             callback(data,null);
@@ -39,4 +46,17 @@ controller.getRutas = async function (callback){
     }
 }
 
+controller.deleteRutas = async function (idruta, callback) {
+    try {
+        let response = await ruta.destroy(
+         {
+            where: {
+                idruta
+            }
+        });
+        callback(null);
+    } catch (error) {
+        callback(error);
+    }
+};
 module.exports = controller;

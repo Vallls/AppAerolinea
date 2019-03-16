@@ -3,9 +3,29 @@ extends layout
 block content
     .body
         .custom-content
-            .content-form
-                span Reservar Boleto
-                form(method="POST" action="/RegisterTri")
-                    .disabled
-                        span Cedula: #{user.CI} Nombre: #{user.Nombre} #{user.Apellido}
+            .content-formRu
+                span Registrar Empleado
+                form(method="POST" action="/AddEmpleado")
                     .form-group
+                        label.labels(for='CI') Cedula
+                        input.inputs(type='text' name='UsuarioCI' id='UsuarioCI' value=`${user.CI}`)
+                    .form-group
+                        label.labels(for='Nombre') Nombre
+                        input.inputs(type='text' value=`${user.Nombre}` disabled)
+                    .form-group
+                        label.labels(for='Apellido') Apellido
+                        input.inputs(type='text' value=`${user.Apellido}` disabled)
+                    .form-group
+                        label.labels(for='cargo') Cargo
+                        select.selects(name='cargo', id='cargo')
+                            option(value="Piloto") Piloto
+                            option(value="CoPiloto") CoPiloto
+                            option(value="Azafata") Azafata
+                            option(value="Medico") Medico
+                            option(value="Enfermero") Enfermero
+                            option(value="Administrativo") Administrativo
+                            option(value="Gerente") Gerente
+                    .form-group
+                        label.labels(for='Nombre') Sueldo
+                        input.inputs(type="text" aria-describedby='sueldo' placeholder='sueldo' name='sueldo' id='sueldo')
+                    button.buttons(type="submit") Registrar

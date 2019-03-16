@@ -1,18 +1,9 @@
 const sequelize = require('sequelize');
 const db = require('../config/database');
 const ruta = require('./rutas');
+const avion = require('./avion');
 
 const vuelo = db.define('Vuelo', {
-    idvuelo: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
-
     bolenven: {
         type: sequelize.INTEGER,
         allowNull: false,
@@ -25,6 +16,7 @@ const vuelo = db.define('Vuelo', {
     estado: {
         type: sequelize.STRING,
         allowNull: false,
+        defaultValue: 'Asignado',
         validate: {
             notEmpty: true,
             isAlpha: true
@@ -36,7 +28,6 @@ const vuelo = db.define('Vuelo', {
         allowNull: true,
         validate: {
             notEmpty: true,
-            isNumeric: true
         }
     },
 
@@ -45,7 +36,6 @@ const vuelo = db.define('Vuelo', {
         allowNull: false,
         validate: {
             notEmpty: true,
-            isNumeric: true
         }
     },
 },{
@@ -54,5 +44,6 @@ const vuelo = db.define('Vuelo', {
 })
 
 vuelo.belongsTo(ruta);
+vuelo.belongsTo(avion);
 vuelo.sync();
 module.exports = vuelo;

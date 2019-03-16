@@ -9,9 +9,10 @@ const controller = {};
 controller.getVuelos = function(callback){
     try{
       db.query(
-        "SELECT `Vuelo`.`idvuelo`, `Rutas`.`idruta`, `Rutas`.`origenIATA`, `Rutas`.`destinoIATA`, `Rutas`.`horsalidp`, `Vuelo`.`fechavuelo`" + 
+        "SELECT `Vuelo`.`id`, `Rutas`.`idruta`, `Rutas`.`origenIATA`, `Rutas`.`destinoIATA`, `Rutas`.`horsalidp`, `Vuelo`.`fechavuelo`" + 
         "FROM `Rutas`" +
-        "INNER JOIN `Vuelo` ON `Rutas`.`idruta` = `Vuelo`.`RutaIdruta`"
+        "INNER JOIN `Vuelo` ON `Rutas`.`idruta` = `Vuelo`.`RutaIdruta`" +
+        "ORDER BY `Vuelo`.`fechavuelo` AND `Rutas`.`origenIATA` ASC"
     ).spread((vuelo,metada) => {
         console.log(vuelo);
         callback(vuelo,null) 
@@ -20,6 +21,11 @@ controller.getVuelos = function(callback){
       callback(error,null)
     }      
 }
+
+controller.AddVuelos = function(data,callback){
+  vuelo.create(data)
+}
+
 
 
 module.exports = controller;

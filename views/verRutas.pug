@@ -3,47 +3,61 @@ extends layout
 block content
     .body
         .custom-content
-            .content-form
+            .content-formRuT
                 span Rutas
                 table.body-table
                     thead
                         tr 
-                            th(scope='col') ID
-                            th(scope='col') Origen
-                            th(scope='col') Destino
-                            th(scope='col') Hora Salida Programada
-                            th(scope='col') Frecuencia
-                            th(scope='col') Duracion
-                            th(scope='col') Eliminar
+                            th.labelsTa(scope='col') ID
+                            th.labelsTa(scope='col') Origen
+                            th.labelsTa(scope='col') Destino
+                            th.labelsTa(scope='col') Hora Programada
+                            th.labelsTa(scope='col') Frecuencia
+                            th.labelsTa(scope='col') Duracion
                     tbody
                     - for (var i = 0; i < ruta.length; i++)
                         tr
-                            th(scope='row') #{ruta[i].idruta}                 
-                            td #{ruta[i].origenIATA}
-                                form(action=`UpdateRuta/${ruta[i].id}`,method="POST")
-                                    label.labels(for='origenIATA')
-                                    input.inputs(type="number" aria-describedby='precio' placeholder='Precio' name='origenIATA' style="margin-bottom:2px")
-                                    button.buttons(type='submit') Update
-                            td #{ruta[i].destinoIATA}
-                                form(action=`UpdateRuta/${ruta[i].id}`,method="POST")
-                                    label.labels(for='destinoIATA')
-                                    input.inputs(type="number" aria-describedby='precio' placeholder='Precio' name='destinoIATA' style="margin-bottom:2px")
-                                    button.buttons(type='submit') Update
-                            td #{ruta[i].horsalidp}
-                                form(action=`UpdateRuta/${ruta[i].id}`,method="POST")
-                                    label.labels(for='horsalidp')
-                                    input.inputs(type="number" aria-describedby='precio' placeholder='Precio' name='horsalidp' style="margin-bottom:2px")
-                                    button.buttons(type='submit') Update                 
-                            td #{ruta[i].frecuencia}
-                                form(action=`UpdateRuta/${ruta[i].id}`,method="POST")
-                                    label.labels(for='fechavuelo')
-                                    input.inputs(type="number" aria-describedby='precio' placeholder='Precio' name='frecuencia' style="margin-bottom:2px")
-                                    button.buttons(type='submit') Update
-                            td #{ruta[i].duracion} horas
-                                form(action=`UpdateRuta/${rutas[i].id}`,method="POST")
-                                    label.labels(for='fechavuelo')
-                                    input.inputs(type="number" aria-describedby='precio' placeholder='Precio' name='duracion' style="margin-bottom:2px")
-                                    button.buttons(type='submit') Update
+                            th.labelsTaB(scope='row') #{ruta[i].idruta}                 
+                            td.labelsTaB #{ruta[i].origenIATA}
+                            td.labelsTaB #{ruta[i].destinoIATA}
+                            td.labelsTaB #{ruta[i].horsalidp}              
+                            td.labelsTaB #{ruta[i].frecuencia}
+                            td.labelsTaB #{ruta[i].duracion} horas
                             td
-                                a(href='/getRutas')
-                                    button.buttons Eliminar  
+                                form(action=`DelateRuta/${ruta[i].idruta}`,method="POST")
+                                    button.buttons Eliminar
+        .custom-content
+            .content-formRuT
+                    span Update Rutas
+                    table.body-table
+                        thead
+                            tr 
+                                th.labelsTa(scope='col') ID
+                                th.labelsTa(scope='col') Origen
+                                th.labelsTa(scope='col') Destino
+                                th.labelsTa(scope='col') Hora Programada
+                                th.labelsTa(scope='col') Frecuencia
+                                th.labelsTa(scope='col') Duracion
+                        tbody
+                        - for (var i = 0; i < ruta.length; i++)
+                            form(action=`UpdateRuta/${ruta[i].idruta}`,method="POST")
+                                tr
+                                    th
+                                        input.inputsT(type="number" placeholder='idRuta' name='idruta' id='idruta' value=`${ruta[i].idruta}`)                
+                                    td
+                                        input.inputsT(type="text" placeholder='origenIATA' name='origenIATA' id='origenIATA' value=`${ruta[i].origenIATA}`)
+                                    td
+                                        input.inputsT(type="text" placeholder='destinoIATA' name='destinoIATA' id='destinoIATA' value=`${ruta[i].destinoIATA}`)
+                                    td
+                                        input.inputsT(type="text" placeholder='horsalidp' name='horsalidp' id='horsalidp' value=`${ruta[i].horsalidp}`)
+                                    td
+                                        input.inputsT(type="text" placeholder='frecuencia' name='frecuencia' id='frecuencia' value=`${ruta[i].frecuencia}`)
+                                    td
+                                        input.inputsT(type="text" placeholder='duracion' name='duracion' id='duracion' value=`${ruta[i].duracion}`)
+                                    td
+                                        button.buttons(type="submit") Update
+
+
+    
+        
+        

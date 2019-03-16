@@ -61,7 +61,7 @@ const modelo = db.define('Modelo', {
         }
     },
     PesoMax:{
-        type: sequelize.INTEFLOATGER,
+        type: sequelize.FLOAT,
         allowNull: true,
         validate: {
             notEmpty: true,

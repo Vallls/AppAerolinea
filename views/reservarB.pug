@@ -5,16 +5,20 @@ block content
         .custom-content
             .content-formRu
                 span Reservar Boleto
-                form(method="POST" action="/RegisterUser")
+                form(method="POST" action="/AddBoleto")
                     -for(var i = 0; i < data.length; i++)
                         label.labels(for='origenIATA') Cedula
-                        input.inputs(type='text' value=`${user.CI}` disabled)
+                        input.inputs(type='text' value=`${user.CI}` name='UsuarioCI')
                         label.labels(for='origenIATA') Nombre
                         input.inputs(type='text' value=`${user.Nombre}` disabled)
                         label.labels(for='origenIATA') Apellido
                         input.inputs(type='text' value=`${user.Apellido}` disabled) 
                     .form-group
                             label.labels(for='origenIATA') Vuelos
-                            select.selects(name='origenIATA' form='origenIATA')
+                            select.selects(name='VueloId', id='VueloId')
                                 - for (let i of data)
-                                    option(value=`${i.idvuelo}`) #{i.idruta} #{i.origenIATA} #{i.destinoIATA} #{i.horsalidp} #{i.fechavuelo}
+                                    option(value=`${i.id}`) #{i.idruta} #{i.origenIATA} #{i.destinoIATA} #{i.horsalidp} #{i.fechavuelo}
+                    .form-group
+                        label.labels(for='idruta') Equipaje Extra
+                        input.inputs(type="number" aria-describedby='equiextra' placeholder='equiextra' name='equiextra')
+                    button.buttons(type="submit") Reservar

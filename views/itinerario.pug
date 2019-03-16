@@ -4,3 +4,23 @@ block content
     .body
         .custom-content
             .content-form
+                span Agregar Vuelos
+                form(method="POST" action="/AddVuelos")
+                    .form-group
+                        label.labels(for='fechavuelo') Fecha de Vuelo 
+                        input.inputs(type="date" aria-describedby='fechavuelo' placeholder='fechavuelo' name='fechavuelo')
+                    .form-group
+                        label.labels(for='destinoIATA') Avion 
+                        select.selects(name='AvionIdavion', id='AvionIdavion')
+                            - for (var i = 0; i < aviones.length; i++)
+                                - x = aviones[i].numAsEco + aviones[i].numAsPC
+                                option(value=`${aviones[i].idavion}`) #{aviones[i].idavion} Modelo: #{aviones[i].ModeloIdmodelo} Puestos: #{x}
+                    .form-group
+                        label.labels(for='origenIATA') Ruta  
+                        select.selects(name='RutaIdruta', id='RutaIdruta')
+                            - for (var i = 0; i < rutas.length; i++)
+                                option(value=`${rutas[i].idruta}`) ID: #{rutas[i].idruta}   #{rutas[i].origenIATA} - #{rutas[i].destinoIATA} Horario: #{rutas[i].horsalidp} Frecuencia: #{rutas[i].frecuencia}
+                    .form-group
+                        label.labels(for='idruta') Boletos en Venta 
+                        input.inputs(type="number" aria-describedby='bolenven' placeholder='Boletos' name='bolenven')
+                    button.buttons(type="submit") Agregar

@@ -1,21 +1,14 @@
 const sequelize = require('sequelize');
 const db = require('../config/database');
+const vuelo = require('../models/vuelo');
+const user = require('../models/user');
 
 const boleto = db.define('Boleto', {
-    idboleto: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
 
     estado:  {
         type: sequelize.STRING,
         allowNull: false,
+        defaultValue: 'Reservado',
         validate: {
             notEmpty: true,
             isAlpha: true
@@ -30,10 +23,21 @@ const boleto = db.define('Boleto', {
             isNumeric: true
         }
     },
+
+    fechares:{
+        type: sequelize.DATEONLY,
+        allowNull: false,
+        defaultValue: sequelize.NOW,
+        validate: {
+            notEmpty: true,
+        }
+    },
 }, {
     timestamps: false,
     freezeTableName: true
 })
 
+boleto.belongsTo(user);
+boleto.belongsTo(vuelo);
 boleto.sync();
 module.exports = boleto;

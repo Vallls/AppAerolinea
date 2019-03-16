@@ -1,0 +1,63 @@
+extends layout
+
+block content
+    .body
+        .custom-content
+            .content-formRu
+                span Create Pistas
+                form(method="POST" action="/AddPista")
+                        .form-group
+                            label.labels(for='idpista') ID Pista
+                            input.inputs(type="number" aria-describedby='idpista' placeholder='idpista' name='idpista' id='idpista')
+                        .form-group
+                            label.labels(for='distancia') Distancia
+                            input.inputs(type="text" aria-describedby='distancia' placeholder='distancia' name='distancia' id='distancia')
+                        .form-group
+                            label.labels(for='distancia') IATA
+                            input.inputs(type="text" aria-describedby='AeropuertoIATA' placeholder='AeropuertoIATA' name='AeropuertoIATA' id='AeropuertoIATA')
+                        button.buttons(type="submit") Create
+        .custom-content
+            .content-formRu
+                span Update Pistas
+                table.body-table
+                    thead
+                        tr 
+                            th.labelsTa(scope='col') IDPista
+                            th.labelsTa(scope='col') Distancia
+                            th.labelsTa(scope='col') Disponibilidad
+                            th.labelsTa(scope='col') IATA
+                    tbody
+                    - for (var i = 0; i < pista.length; i++)
+                        form(action=`UpdatePista/${pista[i].id}`,method="POST")
+                            tr
+                                th
+                                    input.inputsT(type="number" placeholder='idpista' name='idpista' id='idpista' value=`${pista[i].idpista}`)                
+                                td
+                                    input.inputsT(type="text" placeholder='distancia' name='distancia' id='distancia' value=`${pista[i].distancia}`)
+                                td.labelsTa(style="font-size:10px") (1:disponible, 0:No disponible)
+                                    input.inputsT(type="text" placeholder='disponibilidad' name='disponibilidad' id='disponibilidad' value=`${pista[i].disponibilidad}`)
+                                td
+                                    input.inputsT(type="text" placeholder='disponibilidad' name='AeropuertoIATA' id='AeropuertoIATA' value=`${pista[i].AeropuertoIATA}`)
+                                td
+                                    button.buttons(type="submit") Update
+        .custom-content
+            .content-formRu
+                span Read and Delate Pistas
+                table.body-table
+                    thead
+                            tr 
+                                th.labelsTa(scope='col') IDPista
+                                th.labelsTa(scope='col') Distancia
+                                th.labelsTa(scope='col') Disponibilidad
+                                th.labelsTa(scope='col') IATA
+                                th.labelsTa(scope='col') Eliminar
+                    tbody
+                    - for (var i = 0; i < pista.length; i++)
+                        tr
+                            th.labelsTaB(scope='row') #{pista[i].idpista}                 
+                            td.labelsTaB #{pista[i].distancia}
+                            td.labelsTaB #{pista[i].disponibilidad}
+                            td.labelsTaB #{pista[i].AeropuertoIATA}
+                            td
+                                form(action=`DelatePista/${pista[i].id}`,method="POST")
+                                    button.buttons Eliminar

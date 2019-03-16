@@ -1,0 +1,60 @@
+extends layout
+
+block content
+    .body
+        .custom-content
+            .content-formRu
+                span Usuarios
+                table.body-table
+                    thead
+                        tr 
+                            th.labelsTa(scope='col') CI
+                            th.labelsTa(scope='col') Nombre
+                            th.labelsTa(scope='col') Apellido
+                            th.labelsTa(scope='col') Sexo
+                            th.labelsTa(scope='col') Correo
+                            th.labelsTa(scope='col') Fecha Nacimiento
+                    tbody
+                    - for (var i = 0; i < user.length; i++)
+                            form(action=`UpdateUser/${user[i].CI}`,method="POST")
+                                tr
+                                    th
+                                        input.inputsT(type="number" placeholder='CI' name='CI' id='CI' value=`${user[i].CI}`)                
+                                    td
+                                        input.inputsT(type="text" placeholder='Nombre' name='Nombre' id='Nombre' value=`${user[i].Nombre}`)
+                                    td
+                                        input.inputsT(type="text" placeholder='Apellido' name='Apellido' id='Apellido' value=`${user[i].Apellido}`)
+                                    td
+                                        input.inputsT(type="text" placeholder='Sexo' name='Sexo' id='Sexo' value=`${user[i].Sexo}`)
+                                    td
+                                        input.inputsT(type="text" placeholder='Correo' name='Correo' id='Correo' value=`${user[i].Correo}`)
+                                    td
+                                        input.inputsT(type="date" placeholder='FechaNac' name='FechaNac' id='FechaNac' value=`${user[i].FechaNac}`)
+                                    td
+                                        button.buttons(type="submit") Update
+                                    td
+                            form(action=`DelateUser/${user[i].CI}`,method="POST")
+                                    td
+                                        button.buttons(type="submit") Eliminar
+        .custom-content
+            .content-formRu
+                span Telefono
+                table.body-table
+                    thead
+                        tr 
+                            th.labelsTa(scope='col') CI
+                            th.labelsTa(scope='col') Telefono
+                    tbody
+                    - for (var i = 0; i < telefono.length; i++)
+                            form(action=`UpdateTelefono/${telefono[i].id}`,method="POST")
+                                tr
+                                    th
+                                        input.inputsT(type="number"  name='UsuarioCI' id='UsuarioCI' value=`${telefono[i].UsuarioCI}`)                
+                                    td
+                                        input.inputsT(type="text"  name='telefono' id='telefono' value=`${telefono[i].telefono}`)
+                                    td
+                                        button.buttons(type="submit") Update
+                                    td
+                            form(action=`DelateTelefono/${telefono[i].id}`,method="POST")
+                                    td
+                                        button.buttons(type="submit") Eliminar

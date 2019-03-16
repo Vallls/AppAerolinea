@@ -3,16 +3,6 @@ const db = require('../config/database');
 const user = require('./user');
 
 const empleado = db.define('Empleado', {
-    idempleado:  {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
-
     sueldo: {
         type: sequelize.DOUBLE,
         allowNull: false,
